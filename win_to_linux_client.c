@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     /* Fill the socket address struct */
     remote_addr.sin_family = AF_INET; 
     remote_addr.sin_port = htons(PORT); 
-    inet_pton(AF_INET, "192.168.0.11", &remote_addr.sin_addr);
+    inet_pton(AF_INET, "192.168.0.66", &remote_addr.sin_addr);
     bzero(&(remote_addr.sin_zero), 8);
  
     /* Try to connect the remote */
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     else 
         printf("[Client] Connected to server at port %d...ok!\n", PORT);
  
-        char* fs_name = "testing.txt";
+        char* fs_name = "text.txt";
         char sdbuf[LENGTH]; 
         printf("[Client] Sending %s to the Server... ", fs_name);
         FILE *fs = fopen(fs_name, "r");
